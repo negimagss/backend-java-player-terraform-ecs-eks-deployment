@@ -1,31 +1,33 @@
 # ⚾ Terraform and ECS exercise-Dev-Ops
 
-The exercise will do the following, 
-1: Create a VPC, subnets and load balancer on AWS 
-2: Create a code build pipeline and also pick the image from this repo to ECR
-3: Once image is captured, the image will be deployed to ECS 
-4: Pubish terraform output and get the URL 
+# Exercise Overview
 
-Publish the ollama to one ECS container and the Java service into another, if any changes, publish the changes to the git, push and code build will pick it from the ECR to rebuild a new instance with 0 downtime 
+The exercise will do the following:
 
+1. Create a VPC, subnets and load balancer on AWS  
+2. Create a CodeBuild pipeline and also pick the image from this repo to ECR  
+3. Once image is captured, it will be deployed to ECS  
+4. Publish terraform output and get the URL  
 
-Steps to recreate 
+Publish the Ollama to one ECS container and the Java service into another.  
+If any changes are made, publish the changes to Git, push, and CodeBuild will pick it from the ECR to rebuild a new instance with zero downtime.
 
-1: cd /terraform 
-2: run terraform init 
-3: terraform plan 
-4: terraform apply 
+## Steps to recreate
 
+1. `cd /terraform`  
+2. Run `terraform init`  
+3. Run `terraform plan`  
+4. Run `terraform apply`  
 
-Player Service is a backend application that serves baseball player data. In addition, Player service integrates with [Ollama](https://github.com/ollama/ollama/blob/main/docs/api.md), which allows us to run the [tinyllama LLM]((https://ollama.com/library/tinyllama)) locally.
+---
 
+Player Service is a backend application that serves baseball player data.  
+In addition, Player Service integrates with Ollama, which allows us to run the tinyllama LLM locally.
 
+Find the URL from your Load Balancer:  
+`http://player-service-alb-291170883.us-east-2.elb.amazonaws.com/v1/chat/list-models`
 
-
-Find the URL from your Load balancer
-http://player-service-alb-291170883.us-east-2.elb.amazonaws.com/v1/chat/list-models
-
-The LLM is running as a sidecar in this deployment. 
+The LLM is running as a sidecar in this deployment.
 
 
 
