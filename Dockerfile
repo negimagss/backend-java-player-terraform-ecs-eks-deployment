@@ -8,6 +8,8 @@ COPY src src
 
 RUN ./mvnw clean package -DskipTests
 
+RUN ls -l target/
+
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","target/backend-java-player-service.jar"]
+ENTRYPOINT ["java", "-jar", "target/player-service-java-0.0.1-SNAPSHOT.jar"]
