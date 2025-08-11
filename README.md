@@ -30,6 +30,16 @@ Find the URL from your Load Balancer:
 The LLM is running as a sidecar in this deployment.
 
 
+The exercise focusos on AWS deployment to ECS automating the process of deployment process and understanding the sidecar for ECS deployments. 
+
+
+### Next: 
+
+Do EKS 
+
+
+
+
 
 ## Dependencies
 
