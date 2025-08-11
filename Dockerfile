@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pom.xml mvnw ./
 COPY .mvn .mvn
 COPY src src
-COPY Player.csv ./           # <-- add this line
+COPY Player.csv /app/Player.csv 
 RUN ls -l /app/
 
 RUN ./mvnw clean package -DskipTests
