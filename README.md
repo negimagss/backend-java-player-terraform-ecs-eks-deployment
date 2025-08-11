@@ -1,4 +1,21 @@
-# ⚾ Player Service
+# ⚾ Terraform and ECS exercise 
+
+The exercise will do the following, 
+1: Create a VPC, subnets and load balancer on AWS 
+2: Create a code build pipeline and also pick the image from this repo to ECR
+3: Once image is captured, the image will be deployed to ECS 
+4: Pubish terraform output and get the URL 
+
+Publish the ollama to one ECS container and the Java service into another, if any changes, publish the changes to the git, push and code build will pick it from the ECR to rebuild a new instance with 0 downtime 
+
+
+Steps to recreate 
+
+1: cd /terraform 
+2: run terraform init 
+3: terraform plan 
+4: terraform apply 
+
 
 Player Service is a backend application that serves baseball player data. In addition, Player service integrates with [Ollama](https://github.com/ollama/ollama/blob/main/docs/api.md), which allows us to run the [tinyllama LLM]((https://ollama.com/library/tinyllama)) locally.
 
