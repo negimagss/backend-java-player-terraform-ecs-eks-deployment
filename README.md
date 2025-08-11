@@ -25,6 +25,8 @@ Player Service is a backend application that serves baseball player data. In add
 Find the URL from your Load balancer
 http://player-service-alb-291170883.us-east-2.elb.amazonaws.com/v1/chat/list-models
 
+The LLM is running as a sidecar in this deployment. 
+
 
 
 ## Dependencies
