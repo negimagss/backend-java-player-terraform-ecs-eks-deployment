@@ -1,4 +1,4 @@
-# ⚾ Terraform and ECS exercise 
+# ⚾ Terraform and ECS exercise-Dev-Ops
 
 The exercise will do the following, 
 1: Create a VPC, subnets and load balancer on AWS 
@@ -18,6 +18,14 @@ Steps to recreate
 
 
 Player Service is a backend application that serves baseball player data. In addition, Player service integrates with [Ollama](https://github.com/ollama/ollama/blob/main/docs/api.md), which allows us to run the [tinyllama LLM]((https://ollama.com/library/tinyllama)) locally.
+
+
+
+
+Find the URL from your Load balancer
+http://player-service-alb-291170883.us-east-2.elb.amazonaws.com/v1/chat/list-models
+
+
 
 ## Dependencies
 
