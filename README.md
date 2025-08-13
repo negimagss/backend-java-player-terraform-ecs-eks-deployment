@@ -9,7 +9,7 @@ The exercise will do the following:
 3. Once image is captured, it will be deployed to ECS  
 4. Publish terraform output and get the URL  
 
-Publish the Ollama to one ECS container and the Java service into another.  
+Publish the Ollama model as a sidecr java application in ECS.  
 If any changes are made, publish the changes to Git, push, and CodeBuild will pick it from the ECR to rebuild a new instance with zero downtime.
 
 ## Steps to recreate
