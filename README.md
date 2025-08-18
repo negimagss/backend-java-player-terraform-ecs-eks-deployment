@@ -97,11 +97,11 @@ kubectl get pods -l app=java-intuit
 
 
 ### Example output:
-
+```shell
 NAME                           READY   STATUS    RESTARTS   AGE
 java-intuit-7cf9ddb8b4-bhtlx   1/1     Running   0          45m
 java-intuit-7cf9ddb8b4-kc6wq   1/1     Running   0          45m
-
+```
 
 Check all pods in the cluster:
 
@@ -109,7 +109,7 @@ kubectl get pods
 
 
 ### Example output:
-
+```shell
 NAME                            READY   STATUS    RESTARTS      AGE
 go-pod-clock-778fc987f7-q5nhj   1/1     Running   7 (43m ago)   171m
 go-pod-clock-778fc987f7-r9bxz   1/1     Running   0             11h
@@ -117,14 +117,14 @@ hello-world-57fb685494-plml8    1/1     Running   0             11h
 java-intuit-7cf9ddb8b4-bhtlx    1/1     Running   0             45m
 java-intuit-7cf9ddb8b4-kc6wq    1/1     Running   0             45m
 ollama-644fdffdf7-2v274         1/1     Running   0             45m
-
+```
 ### Step 4: 
 Test the New Deployment
 
 Test the Java-intuit service using the Load Balancer URL:
-
+```shell
 curl --location 'http://<ELB-DNS-NAME>.us-east-2.elb.amazonaws.com/v1/players/zychto01'
-
+```
 
 Replace <ELB-DNS-NAME> with the actual DNS name of your ELB.
 
