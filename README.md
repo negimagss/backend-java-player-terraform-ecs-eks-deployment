@@ -1,4 +1,4 @@
-# ⚾ Terraform and ECS exercise-Dev-Ops
+# ⚾ Terraform and ECS and EKS exercise
 
 # Exercise Overview
 
