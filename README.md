@@ -25,7 +25,7 @@ Player Service is a backend application that serves baseball player data.
 In addition, Player Service integrates with Ollama, which allows us to run the tinyllama LLM locally.
 
 Find the URL from your Load Balancer:  
-`http://player-service-alb-291170883.us-east-2.elb.amazonaws.com/v1/chat/list-models`
+`http://<ALBURL>.us-east-2.elb.amazonaws.com/v1/chat/list-models`
 
 The LLM is running as a sidecar in this deployment.
 
@@ -127,6 +127,9 @@ curl --location 'http://<ELB-DNS-NAME>.us-east-2.elb.amazonaws.com/v1/players/zy
 
 
 Replace <ELB-DNS-NAME> with the actual DNS name of your ELB.
+
+
+### Check all URLS from EC2-> LB 
 
 
 
