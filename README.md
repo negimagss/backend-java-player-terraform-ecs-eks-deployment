@@ -35,10 +35,94 @@ The exercise focusos on AWS deployment to ECS automating the process of deployme
 terraform destory after validation. 
 
 ### Next: 
+EKS
 
-Do EKS 
+
+EKS Deployment Guide
+
+This guide explains how to deploy your Kubernetes workloads using EKS. Reference the main-eks.tf file for deploying the EKS cluster.
+
+Step 1: Deploy the EKS Cluster with NGNIX Pod
+
+Use main-eks.tf to create the EKS cluster.
+
+This deployment will automatically create an NGNIX pod as part of the cluster setup.
+
+Step 2: Deploy Additional Services
+
+The next two pods need to be deployed using your YAML manifests:
+
+Go-lang Pod
+
+Java-intuit Pod
+
+To deploy:
+
+cd yaml
+kubectl apply -f <yaml-file-name>
 
 
+This will configure the new service files in your Kubernetes cluster and start the pods.
+
+Notes:
+
+ECR Images:
+
+Ensure both Docker images have been pushed to your ECR repository.
+
+The ECR locations are specified in the YAML files. Replace the placeholder text with your actual image URIs.
+
+Refer to the ECR documentation for instructions on pushing images.
+
+Load Balancer & Networking:
+
+EKS will create new EC2 instances to host the pods.
+
+A new Load Balancer (LB) will be automatically provisioned and attached to one of the public subnets defined (currently, two public subnets are defined).
+
+The new LB will provide external access to your services.
+
+Service Availability:
+
+Once deployed, the new URL for your services will be live and accessible externally.
+
+Step 3: Verify Pods
+
+Check that the Java-intuit pods are running:
+
+kubectl get pods -l app=java-intuit
+
+
+Example output:
+
+NAME                           READY   STATUS    RESTARTS   AGE
+java-intuit-7cf9ddb8b4-bhtlx   1/1     Running   0          45m
+java-intuit-7cf9ddb8b4-kc6wq   1/1     Running   0          45m
+
+
+Check all pods in the cluster:
+
+kubectl get pods
+
+
+Example output:
+
+NAME                            READY   STATUS    RESTARTS      AGE
+go-pod-clock-778fc987f7-q5nhj   1/1     Running   7 (43m ago)   171m
+go-pod-clock-778fc987f7-r9bxz   1/1     Running   0             11h
+hello-world-57fb685494-plml8    1/1     Running   0             11h
+java-intuit-7cf9ddb8b4-bhtlx    1/1     Running   0             45m
+java-intuit-7cf9ddb8b4-kc6wq    1/1     Running   0             45m
+ollama-644fdffdf7-2v274         1/1     Running   0             45m
+
+Step 4: Test the New Deployment
+
+Test the Java-intuit service using the Load Balancer URL:
+
+curl --location 'http://<ELB-DNS-NAME>.us-east-2.elb.amazonaws.com/v1/players/zychto01'
+
+
+Replace <ELB-DNS-NAME> with the actual DNS name of your ELB.
 
 
 
