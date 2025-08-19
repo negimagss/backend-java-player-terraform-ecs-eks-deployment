@@ -1,6 +1,8 @@
 # ⚾ Terraform and ECS and EKS exercise
 
-# Exercise Overview
+# Exercise Overview 
+
+# ECS deployment 
 
 The exercise will do the following:
 
@@ -34,8 +36,7 @@ The exercise focusos on AWS deployment to ECS automating the process of deployme
 
 terraform destory after validation. 
 
-### Next: 
-EKS
+### Next: EKS 
 
 
 ### EKS Deployment Guide with Istio
@@ -131,6 +132,10 @@ Replace <ELB-DNS-NAME> with the actual DNS name of your ELB.
 
 ### Check all URLS from EC2-> LB 
 
+
+## Enhancements 
+Add an ingress which will route all traffic from itself so not many load balancers will be created 
+Add API gateway for more control 
 
 
 ## Dependencies
