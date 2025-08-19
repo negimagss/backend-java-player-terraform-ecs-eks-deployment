@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-intuit
+spec:
+  selector:
+    app: java-intuit
+  ports:
+    - port: 80          # external LB port
+      targetPort: 8080  # container port
+  type: LoadBalancer
