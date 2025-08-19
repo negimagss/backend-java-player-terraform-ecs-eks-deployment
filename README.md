@@ -38,7 +38,7 @@ terraform destory after validation.
 EKS
 
 
-### EKS Deployment Guide
+### EKS Deployment Guide with Istio
 
 This guide explains how to deploy your Kubernetes workloads using EKS. Reference the main-eks.tf file for deploying the EKS cluster.
 
