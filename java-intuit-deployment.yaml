@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: java-intuit
+  annotations:
+    sidecar.istio.io/inject: "true"
 spec:
   replicas: 2
   selector:
@@ -14,21 +16,9 @@ spec:
     spec:
       containers:
       - name: java-intuit
-        image: XXXXXXXXXXXX.dkr.ecr.us-east-2.amazonaws.com/java-intuit:latest
+        image: 918791104396.dkr.ecr.us-east-2.amazonaws.com/java-intuit:latest
         ports:
         - containerPort: 8080
         env:
         - name: OLLAMA_HOST
-          value: "http://ollama:11434"  # points to the Ollama service
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: java-intuit
-spec:
-  selector:
-    app: java-intuit
-  ports:
-  - port: 8080
-    targetPort: 8080
-  type: LoadBalancer
+          value: "http://ollama:11434"
